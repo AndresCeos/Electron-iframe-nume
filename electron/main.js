@@ -38,7 +38,10 @@ function createWindow() {
     // Open DevTools in development
     mainWindow.webContents.openDevTools();
   } else {
-    mainWindow.loadFile(path.join(__dirname, '../dist/public/index.html'));
+    // In production, the dist folder is at the app root level
+    const indexPath = path.join(__dirname, '../dist/public/index.html');
+    console.log('Loading from:', indexPath);
+    mainWindow.loadFile(indexPath);
   }
 
   // Show window when ready
