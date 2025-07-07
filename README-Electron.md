@@ -16,41 +16,57 @@ This project creates a desktop application that wraps the Numerología Cotidiana
 To run the application in development mode:
 ```bash
 # Start the web server and Electron app
-node scripts/electron-dev.js
+npm run electron:dev
 ```
 
 ### Building Installers
 
-#### For Windows (.exe installer)
+#### Quick Commands (after adding scripts to package.json)
+
+**For Windows (.exe installer):**
 ```bash
-# Build for Windows
-npm run build
-npx electron-builder --win
+npm run electron:build-win
 ```
 
-#### For macOS (.dmg installer)
+**For macOS (.dmg installer):**
 Compatible with both Intel Mac and Apple Silicon processors:
 
 ```bash
 # Build for macOS Intel processors (x64)
-npm run build
-npx electron-builder --mac --x64
+npm run electron:build-mac-intel
 
 # Build for macOS Apple Silicon processors (M1, M2, M3, etc.)
-npm run build  
-npx electron-builder --mac --arm64
+npm run electron:build-mac-silicon
 
 # Build universal macOS app (both Intel and Apple Silicon)
-npm run build
-npx electron-builder --mac
+npm run electron:build-mac-universal
 ```
 
-#### Build All Platforms
+**Build All Platforms:**
 ```bash
-# Build for all platforms
-npm run build
-npx electron-builder --mac --win
+npm run electron:build-all
 ```
+
+#### Manual Commands (if scripts not added to package.json)
+
+```bash
+# Windows
+npm run build && npx electron-builder --win
+
+# Mac Intel
+npm run build && npx electron-builder --mac --x64
+
+# Mac Apple Silicon  
+npm run build && npx electron-builder --mac --arm64
+
+# Mac Universal
+npm run build && npx electron-builder --mac
+
+# All platforms
+npm run build && npx electron-builder --mac --win
+```
+
+**Note:** To use the quick commands, add the scripts from `scripts/add-to-package.md` to your package.json file.
 
 ### Output
 The built installers will be created in the `release/` directory:

@@ -115,9 +115,14 @@ Currently includes a basic user schema with:
 - **Output Directory**: `release/` folder
 
 ### Build Commands
-- Development: `node scripts/electron-dev.js`
-- Production Build: `npm run build && npx electron-builder`
-- Platform Specific: `npx electron-builder --win` or `npx electron-builder --mac`
+- Development: `npm run electron:dev` (after adding scripts to package.json)
+- Windows Build: `npm run electron:build-win`  
+- Mac Intel Build: `npm run electron:build-mac-intel`
+- Mac Apple Silicon Build: `npm run electron:build-mac-silicon`
+- Mac Universal Build: `npm run electron:build-mac-universal`
+- All Platforms: `npm run electron:build-all`
+
+**Note:** Scripts need to be added to package.json from `scripts/add-to-package.md`
 
 ### Features
 - Fullscreen iframe wrapper (removed custom header)
