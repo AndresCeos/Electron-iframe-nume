@@ -111,7 +111,7 @@ Currently includes a basic user schema with:
 
 ### Build Targets
 - **Windows**: NSIS installer (.exe) for x64 architecture
-- **macOS**: DMG installer for both Intel (x64) and Apple Silicon (arm64)
+- **macOS**: DMG installer compatible with both Intel Mac processors (x64) and Apple Silicon processors (arm64) including M1, M2, M3
 - **Output Directory**: `release/` folder
 
 ### Build Commands

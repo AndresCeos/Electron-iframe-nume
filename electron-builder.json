@@ -25,7 +25,8 @@
         "arch": ["x64", "arm64"]
       }
     ],
-    "icon": "assets/icon.icns"
+    "icon": "assets/icon.icns",
+    "minimumSystemVersion": "10.11.0"
   },
   "win": {
     "target": [

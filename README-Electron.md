@@ -29,16 +29,18 @@ npx electron-builder --win
 ```
 
 #### For macOS (.dmg installer)
+Compatible with both Intel Mac and Apple Silicon processors:
+
 ```bash
-# Build for macOS (Intel)
+# Build for macOS Intel processors (x64)
 npm run build
 npx electron-builder --mac --x64
 
-# Build for macOS (Apple Silicon)
+# Build for macOS Apple Silicon processors (M1, M2, M3, etc.)
 npm run build  
 npx electron-builder --mac --arm64
 
-# Build for both macOS architectures
+# Build universal macOS app (both Intel and Apple Silicon)
 npm run build
 npx electron-builder --mac
 ```
@@ -53,8 +55,8 @@ npx electron-builder --mac --win
 ### Output
 The built installers will be created in the `release/` directory:
 - Windows: `Numerología Cotidiana Setup.exe`
-- macOS Intel: `Numerología Cotidiana-x64.dmg`
-- macOS Apple Silicon: `Numerología Cotidiana-arm64.dmg`
+- macOS Intel processors: `Numerología Cotidiana-x64.dmg`
+- macOS Apple Silicon processors (M1/M2/M3): `Numerología Cotidiana-arm64.dmg`
 
 ## Features
 - Full-screen iframe wrapper for https://v2.numerologia-cotidiana.com/?m=1
@@ -89,7 +91,7 @@ The build settings are configured in `electron-builder.json` and include:
 
 ### Platform Requirements
 - **Windows**: Windows 7+ (64-bit)
-- **macOS**: macOS 10.11+ (Intel and Apple Silicon)
+- **macOS**: macOS 10.11+ (compatible with both Intel Mac and Apple Silicon processors including M1, M2, M3)
 
 ## Security
 The app is configured with secure defaults:
