@@ -99,9 +99,37 @@ Currently includes a basic user schema with:
 - `db:push` command for development schema updates
 - Environment-based database URL configuration
 
+## Electron Desktop Application
+
+### Configuration
+- **Main Process**: `electron/main.js` - Main Electron process with window management
+- **Preload Script**: `electron/preload.js` - Security layer for renderer process 
+- **Build Config**: `electron-builder.json` - Multi-platform build configuration
+- **Icons**: Custom provided icons in `assets/` directory
+  - Windows: `icon.ico` (131KB)
+  - macOS: `icon.icns` (42KB)
+
+### Build Targets
+- **Windows**: NSIS installer (.exe) for x64 architecture
+- **macOS**: DMG installer for both Intel (x64) and Apple Silicon (arm64)
+- **Output Directory**: `release/` folder
+
+### Build Commands
+- Development: `node scripts/electron-dev.js`
+- Production Build: `npm run build && npx electron-builder`
+- Platform Specific: `npx electron-builder --win` or `npx electron-builder --mac`
+
+### Features
+- Fullscreen iframe wrapper (removed custom header)
+- Security hardened with context isolation
+- Custom application icons provided by user
+- Error handling and retry mechanisms
+- Loading states with connection status
+
 ## Changelog
 
 - July 07, 2025. Initial setup
+- July 07, 2025. Added Electron desktop application with Windows and macOS installers
 
 ## User Preferences
 

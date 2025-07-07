@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="32" fill="url(#gradient)"/>
+  <g fill="white" transform="translate(48, 48)">
+    <!-- Infinity symbol representing eternal wisdom -->
+    <path d="M80 80c-13.255 0-24-10.745-24-24s10.745-24 24-24c8.837 0 16.578 4.804 20.758 12 4.18-7.196 11.921-12 20.758-12 13.255 0 24 10.745 24 24s-10.745 24-24 24c-8.837 0-16.578-4.804-20.758-12C96.578 75.196 88.837 80 80 80z" stroke="white" stroke-width="4" fill="none"/>
+    <!-- Numbers around the infinity -->
+    <text x="30" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">1</text>
+    <text x="130" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">2</text>
+    <text x="30" y="120" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">3</text>
+    <text x="130" y="120" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">9</text>
+  </g>
+</svg>

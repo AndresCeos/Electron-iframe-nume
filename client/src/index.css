@@ -66,17 +66,21 @@
     font-family: 'Inter', system-ui, sans-serif;
     height: 100vh;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
   }
 
   html {
     height: 100vh;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
   }
 
   #root {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
+    width: 100vw;
+    display: block;
   }
 }
 

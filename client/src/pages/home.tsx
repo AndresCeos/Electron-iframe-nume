@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { RefreshCw, Home, Minus, Square, X, ExternalLink, AlertTriangle } from "lucide-react";
+import { RefreshCw, ExternalLink, AlertTriangle } from "lucide-react";
 
 type AppState = {
   isLoading: boolean;
@@ -85,12 +84,6 @@ export default function HomePage() {
     window.open(IFRAME_URL, '_blank');
   };
 
-  const goHome = () => {
-    if (iframeRef.current) {
-      iframeRef.current.src = IFRAME_URL;
-    }
-  };
-
   const getStatusIndicator = () => {
     switch (appState.connectionStatus) {
       case 'connected':
@@ -123,68 +116,9 @@ export default function HomePage() {
   const statusConfig = getStatusIndicator();
 
   return (
-    <div className="h-screen flex flex-col bg-background">
-      {/* Header */}
-      <header className="app-header">
-        <div className="flex items-center space-x-3">
-          <div className="app-logo">
-            <i className="fas fa-infinity text-white text-sm"></i>
-          </div>
-          <div>
-            <h1 className="app-title">Numerología Cotidiana</h1>
-            <p className="app-subtitle">Desktop Application</p>
-          </div>
-        </div>
-        
-        <div className="flex items-center space-x-2">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={retryConnection}
-            className="control-btn"
-            title="RefreshCw"
-          >
-            <RefreshCw className="h-4 w-4 text-secondary" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={goHome}
-            className="control-btn"
-            title="Home"
-          >
-            <Home className="h-4 w-4 text-secondary" />
-          </Button>
-          <Separator orientation="vertical" className="h-6" />
-          <Button
-            variant="ghost"
-            size="sm"
-            className="control-btn"
-            title="Minimize"
-          >
-            <Minus className="h-3 w-3 text-secondary" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="control-btn"
-            title="Maximize"
-          >
-            <Square className="h-3 w-3 text-secondary" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="control-btn-close"
-            title="Close"
-          >
-            <X className="h-4 w-4 text-red-500" />
-          </Button>
-        </div>
-      </header>
-
+    <div className="h-screen bg-background">
       {/* Main Content */}
-      <main className="flex-1 relative">
+      <main className="h-full relative">
         {/* Loading State */}
         {appState.isLoading && (
           <div className="absolute inset-0 bg-white flex items-center justify-center z-10">
